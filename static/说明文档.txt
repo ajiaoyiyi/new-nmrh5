@@ -1,0 +1,49 @@
+克隆项目：git clone git://git.kernel.org/pub/scm/git/git.git
+ 
+使用Vue2+VueRouter2+Webpack+Vux+Vux-loader+Axios
+【npm】利用npm安装/删除/发布/更新/撤销发布包：https://www.cnblogs.com/penghuwan/p/6973702.html#_label2_0
+
+npm install 模块：安装好后不写入package.json中
+npm install 模块 --save 安装好后写入package.json的dependencies中（生产环境依赖）
+npm install 模块 --save-dev 安装好后写入package.json的devDepencies中（开发环境依赖）
+快捷方式：
+-S, --save: Package will appear in your dependencies.
+-D, --save-dev: Package will appear in your devDependencies.
+-O, --save-optional: Package will appear in your optionalDependencies.
+
+
+注意：
+在团队协作中，一个常见的情景是他人从github上clone你的项目，然后通过npm install安装必要的依赖，（刚从github上clone下来是没有node_modules的，需要安装）那么根据什么信息安装依赖呢？就是你的package.json中的dependencies和devDepencies。所以，在本地安装的同时，将依赖包的信息（要求的名称和版本）写入package.json中是很重要的！
+
+
+1、安装node、git、 cnpm(淘宝镜像)
+2、全局安装 vue-cli：cnpm install vue-cli -g  (-g 全局安装)
+3、命令行定位到要创建项目的文件夹，如：cd project
+4、安装webpack模板初始化项目：vue init airyland/vux2 projectPath（项目名称）
+	name 回车
+	description 自己写
+	 author 自己名字→默认回车→vue-router (y)安装→esline 和test 建议先不安装→根据提示执行项目
+	cd 项目名称
+	cnpm install (安装依赖)
+	cnpm run dev （运行项目）
+  安装项目有两种方法：
+    1：上面的安装，使用的是VUX的直接安装  不用手动配置
+    2：在原有的vue项目上进行安装 需要配置vux
+
+5、自定义样式使用的是sass
+	安装sass文件： cnpm install sass-loader -D
+		       cnpm install node-sass -D
+6、安装完成之后 根目录下config下的index 打包文件名称改为nmr
+
+7、项目完成之后 编译打包 ：cnpm run build
+
+8、上传服务器，浏览地址：h5.nongmuren.com/nmrh5/index.html
+
+9、安装axios 数据请求 cnpm install axios --save
+
+相关插件：
+better-scroll：解决移动端各种滚动场景需求的插件
+
+	
+	
+

@@ -1,0 +1,155 @@
+/*scss混入文件*/
+
+// 背景图片地址和大小
+@mixin bis($url) { 
+	background-image: url($url);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+@mixin borderRadius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    -o-border-radius: $radius;
+    border-radius: $radius;
+}
+//定位全屏
+@mixin allcover{
+	position:absolute;
+	top:0;
+	right:0;
+}
+
+//定位上下左右居中
+@mixin center {  
+	position: absolute;
+	top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+//定位上下居中
+@mixin ct {  
+	position: absolute;
+	top: 50%;
+    transform: translateY(-50%);
+}
+
+//定位上下居中
+@mixin cl {  
+	position: absolute;
+	left: 50%;
+    transform: translateX(-50%);
+}
+
+//宽高
+@mixin wh($width, $height){
+	width: $width;
+	height: $height;
+}
+
+//字体大小、行高、字体
+@mixin font($size, $line-height, $family: 'sans-serif') {  
+	font: #{$size}/#{$line-height} $family;
+}
+
+//字体大小，颜色
+@mixin sc($size, $color){
+	font-size: $size;
+	color: $color;
+}
+
+
+//文字显示最多显示行数，多余的隐藏，不使用省略号
+@mixin line-clamp($row){
+	overflow:hidden; 
+	display:-webkit-box; 
+	-webkit-box-orient:vertical;
+	-webkit-line-clamp:$row; 
+}
+
+//flex 布局和 子元素 对其方式
+@mixin fj($type: space-between){
+	display: flex;
+	justify-content: $type;
+
+}
+
+// border-bottom 样式和颜色
+@mixin border-bt{ 
+	border-bottom: 1px solid #f2f2f2;
+}
+
+// border-top 样式和颜色
+@mixin border-tp{ 
+	border-top: 1px solid #f2f2f2;
+}
+
+//默认背景样式
+@mixin default-bg($h){
+	width: 100%;
+	height: $h;
+	background: $defaultbg-color url('/static/images/default-imgbg.png') no-repeat center center;
+	background-size: 85px 85px;
+}
+
+//border 宽度 形状 颜色
+@mixin border($w,$s,$c){
+	border: $w $s $c;
+}
+
+// border 颜色
+@mixin border-c($c){ 
+	border: 1px solid $c;
+}
+
+//上三角 下三角 左三角 右三角 实心  宽度  上 下 左 右距离 颜色
+@mixin triangle-top($w,$t,$b,$l,$r,$c){
+	position: relative;
+	&:before{
+	    content: '';
+	    position: absolute;
+	    top: -$t;
+	    left: $l;
+	    border-width:0 $w $w;
+	    border-style:solid;
+	    border-color:transparent transparent $c;
+	}
+}
+@mixin triangle-bottom($w,$t,$b,$l,$r,$c){
+	position: relative;
+  &:before{
+    content: '';
+    position: absolute;
+    bottom:-$b;
+    left: $l;
+    border-width:$w $w 0;
+    border-style:solid;
+    border-color: $c transparent transparent;
+  }
+}
+@mixin triangle-left($w,$t,$b,$l,$r,$c){
+	position: relative;
+  &:before{
+    content: '';
+    position: absolute;
+    top: $t;
+    left: -$t;
+    border-width:$w $w $w 0;
+    border-style:solid;
+    border-color:transparent $c transparent transparent;
+  }
+}
+@mixin triangle-right($w,$t,$b,$l,$r,$c){
+	position: relative;
+  &:before{
+    content: '';
+    position: absolute;
+    top: $t;
+    right: -$r;
+    border-width: $w 0 $w $w;
+    border-style:solid;
+    border-color:transparent transparent transparent $c;
+  }
+}
